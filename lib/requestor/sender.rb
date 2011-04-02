@@ -13,7 +13,7 @@ module Requestor
 				@errback.call(e)
 				return
 			end
-			@socket.send str, 0
+			@socket.send str.to_json, 0
 			@socket.close_write
 			#@socket.flush
 		end
